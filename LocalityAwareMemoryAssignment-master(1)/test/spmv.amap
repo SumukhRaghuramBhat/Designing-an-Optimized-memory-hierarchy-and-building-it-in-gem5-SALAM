@@ -1,0 +1,46 @@
+spmv.amap
+
+Function: spmv
+Params:
+double* nocapture readonly %val, i32* nocapture readonly %cols, i32* nocapture readonly %rowDelimiters, double* nocapture readonly %vec, double* nocapture %out
+
+	Variable: rowDelimiters	Type: i32	Stride: VARIABLE
+	Accesses:
+	Basic Block: %1	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %2 = getelementptr inbounds i32, i32* %rowDelimiters, i32 %i.03
+		%i.03 (INDUCTION)
+
+	  %5 = getelementptr inbounds i32, i32* %rowDelimiters, i32 %4
+		%4 (NESTED_INDUCTION)
+
+
+	Variable: val	Type: double	Stride: 1
+	Accesses:
+	Basic Block: %.lr.ph	Number of accesses: 1	Segment stride: 1
+	  %8 = getelementptr inbounds double, double* %val, i32 %j.02
+		%j.02 (INDUCTION)
+
+
+	Variable: cols	Type: i32	Stride: 1
+	Accesses:
+	Basic Block: %.lr.ph	Number of accesses: 1	Segment stride: 1
+	  %10 = getelementptr inbounds i32, i32* %cols, i32 %j.02
+		%j.02 (INDUCTION)
+
+
+	Variable: vec	Type: double	Stride: RUNTIME DEPENDENT STRIDE
+	Accesses:
+	Basic Block: %.lr.ph	Number of accesses: 1	Segment stride: N/A
+	  %12 = getelementptr inbounds double, double* %vec, i32 %11
+		%11 (REGISTER)
+
+
+	Variable: out	Type: double	Stride: 1
+	Accesses:
+	Basic Block: %._crit_edge	Number of accesses: 1	Segment stride: 1
+	  %17 = getelementptr inbounds double, double* %out, i32 %i.03
+		%i.03 (INDUCTION)
+
+
+
+

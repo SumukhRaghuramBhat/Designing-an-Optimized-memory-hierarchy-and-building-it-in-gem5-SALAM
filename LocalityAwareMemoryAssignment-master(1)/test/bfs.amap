@@ -1,0 +1,54 @@
+bfs.amap
+
+Struct types:
+%struct.node_t_struct = type { i64, i64 }
+%struct.edge_t_struct = type { i64 }
+
+Function: bfs
+Params:
+%struct.node_t_struct* nocapture readonly %nodes, %struct.edge_t_struct* nocapture readonly %edges, i64 %starting_node, i8* nocapture %level, i64* nocapture %level_counts
+
+	Variable: level	Type: i8	Stride: RUNTIME DEPENDENT STRIDE
+	Accesses:
+	Basic Block: %0	Number of accesses: 1	Segment stride: N/A
+	  %1 = getelementptr inbounds i8, i8* %level, i64 %starting_node
+		%starting_node (REGISTER)
+
+	Basic Block: %3	Number of accesses: 1	Segment stride: N/A
+	  %4 = getelementptr inbounds i8, i8* %level, i64 %n.04
+		%n.04 (INDUCTION)
+
+	Basic Block: %.lr.ph	Number of accesses: 1	Segment stride: N/A
+	  %16 = getelementptr inbounds i8, i8* %level, i64 %15
+		%15 (REGISTER)
+
+
+	Variable: nodes	Type: %struct.node_t_struct	Stride: 1
+	Accesses:
+	Basic Block: %8	Number of accesses: 2	Segment stride: 1
+	  %9 = getelementptr inbounds %struct.node_t_struct, %struct.node_t_struct* %nodes, i64 %n.04, i32 0
+		%n.04 (INDUCTION)
+		0 (CONSTANT)
+
+	  %11 = getelementptr inbounds %struct.node_t_struct, %struct.node_t_struct* %nodes, i64 %n.04, i32 1
+		%n.04 (INDUCTION)
+		1 (CONSTANT)
+
+
+	Variable: edges	Type: %struct.edge_t_struct	Stride: VARIABLE
+	Accesses:
+	Basic Block: %.lr.ph	Number of accesses: 1	Segment stride: VECTOR WIDTH
+	  %14 = getelementptr inbounds %struct.edge_t_struct, %struct.edge_t_struct* %edges, i64 %e.02, i32 0
+		%e.02 (INDUCTION)
+		0 (CONSTANT)
+
+
+	Variable: level_counts	Type: i64	Stride: 1
+	Accesses:
+	Basic Block: %24	Number of accesses: 1	Segment stride: 1
+	  %26 = getelementptr inbounds i64, i64* %level_counts, i64 %25
+		%25 (NESTED_INDUCTION)
+
+
+
+

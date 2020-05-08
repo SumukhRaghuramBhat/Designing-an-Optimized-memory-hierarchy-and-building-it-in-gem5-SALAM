@@ -1,0 +1,89 @@
+stencil3d.amap
+
+Function: stencil3d
+Params:
+i32* nocapture readonly %C, i32* nocapture readonly %orig, i32* nocapture %sol
+
+	Variable: orig	Type: i32	Stride: VARIABLE
+	Accesses:
+	Basic Block: %4	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %6 = getelementptr inbounds i32, i32* %orig, i32 %5
+		%5 (NESTED_INDUCTION)
+
+	  %10 = getelementptr inbounds i32, i32* %orig, i32 %9
+		%9 (NESTED_INDUCTION)
+
+	Basic Block: %19	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %21 = getelementptr inbounds i32, i32* %orig, i32 %20
+		%20 (NESTED_INDUCTION)
+
+	  %25 = getelementptr inbounds i32, i32* %orig, i32 %24
+		%24 (NESTED_INDUCTION)
+
+	Basic Block: %33	Number of accesses: 2	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %36 = getelementptr inbounds i32, i32* %orig, i32 %35
+		%35 (REGISTER)
+
+	  %40 = getelementptr inbounds i32, i32* %orig, i32 %39
+		%39 (REGISTER)
+
+	Basic Block: %63	Number of accesses: 7	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %65 = getelementptr inbounds i32, i32* %orig, i32 %64
+		%64 (NESTED_INDUCTION)
+
+	  %68 = getelementptr inbounds i32, i32* %orig, i32 %67
+		%67 (NESTED_INDUCTION)
+
+	  %71 = getelementptr inbounds i32, i32* %orig, i32 %70
+		%70 (NESTED_INDUCTION)
+
+	  %75 = getelementptr inbounds i32, i32* %orig, i32 %74
+		%74 (NESTED_INDUCTION)
+
+	  %79 = getelementptr inbounds i32, i32* %orig, i32 %78
+		%78 (NESTED_INDUCTION)
+
+	  %84 = getelementptr inbounds i32, i32* %orig, i32 %83
+		%83 (REGISTER)
+
+	  %88 = getelementptr inbounds i32, i32* %orig, i32 %87
+		%87 (NESTED_INDUCTION)
+
+
+	Variable: sol	Type: i32	Stride: VARIABLE
+	Accesses:
+	Basic Block: %4	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %8 = getelementptr inbounds i32, i32* %sol, i32 %5
+		%5 (NESTED_INDUCTION)
+
+	  %12 = getelementptr inbounds i32, i32* %sol, i32 %9
+		%9 (NESTED_INDUCTION)
+
+	Basic Block: %19	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %23 = getelementptr inbounds i32, i32* %sol, i32 %20
+		%20 (NESTED_INDUCTION)
+
+	  %27 = getelementptr inbounds i32, i32* %sol, i32 %24
+		%24 (NESTED_INDUCTION)
+
+	Basic Block: %33	Number of accesses: 2	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %38 = getelementptr inbounds i32, i32* %sol, i32 %35
+		%35 (REGISTER)
+
+	  %42 = getelementptr inbounds i32, i32* %sol, i32 %39
+		%39 (REGISTER)
+
+	Basic Block: %63	Number of accesses: 1	Segment stride: 1
+	  %96 = getelementptr inbounds i32, i32* %sol, i32 %64
+		%64 (NESTED_INDUCTION)
+
+
+	Variable: C	Type: i32	Stride: 0
+	Accesses:
+	Basic Block: %.preheader2	Number of accesses: 1	Segment stride: 0
+	  %32 = getelementptr inbounds i32, i32* %C, i32 1
+		1 (CONSTANT)
+
+
+
+

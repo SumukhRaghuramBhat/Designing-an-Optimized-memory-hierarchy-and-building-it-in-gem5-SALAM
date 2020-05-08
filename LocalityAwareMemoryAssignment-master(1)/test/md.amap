@@ -1,0 +1,99 @@
+md.amap
+
+Struct types:
+%struct.dvector_t = type { double, double, double }
+%struct.ivector_t = type { i32, i32, i32 }
+
+Function: md
+Params:
+[4 x [4 x i32]]* %n_points, [4 x [4 x [10 x %struct.dvector_t]]]* %force, [4 x [4 x [10 x %struct.dvector_t]]]* %position
+
+	Variable: n_points	Type: [4 x [4 x i32]]	Stride: 1
+	Accesses:
+	Basic Block: %.lr.ph27	Number of accesses: 1	Segment stride: 1
+	  %56 = getelementptr inbounds [4 x [4 x i32]]* %n_points, i64 %indvars.iv67, i64 %indvars.iv64, i64 %indvars.iv61, !dbg !94
+		%indvars.iv67 (INDUCTION)
+		%indvars.iv64 (INDUCTION)
+		%indvars.iv61 (INDUCTION)
+
+	Basic Block: %.lr.ph19	Number of accesses: 1	Segment stride: 1
+	  %58 = getelementptr inbounds [4 x [4 x i32]]* %n_points, i64 %indvars.iv55, i64 %indvars.iv46, i64 %indvars.iv37, !dbg !95
+		%indvars.iv55 (INDUCTION)
+		%indvars.iv46 (INDUCTION)
+		%indvars.iv37 (INDUCTION)
+
+
+	Variable: position	Type: [4 x [4 x [10 x %struct.dvector_t]]]	Stride: 1
+	Accesses:
+	Basic Block: %63	Number of accesses: 3	Segment stride: 1
+	  %64 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %position, i64 %indvars.iv67, i64 %indvars.iv64, i64 %indvars.iv61, i64 %indvars.iv33, i32 0, !dbg !102
+		%indvars.iv67 (INDUCTION)
+		%indvars.iv64 (INDUCTION)
+		%indvars.iv61 (INDUCTION)
+		%indvars.iv33 (INDUCTION)
+		0 (CONSTANT)
+
+	  %66 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %position, i64 %indvars.iv67, i64 %indvars.iv64, i64 %indvars.iv61, i64 %indvars.iv33, i32 1, !dbg !102
+		%indvars.iv67 (INDUCTION)
+		%indvars.iv64 (INDUCTION)
+		%indvars.iv61 (INDUCTION)
+		%indvars.iv33 (INDUCTION)
+		1 (CONSTANT)
+
+	  %68 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %position, i64 %indvars.iv67, i64 %indvars.iv64, i64 %indvars.iv61, i64 %indvars.iv33, i32 2, !dbg !102
+		%indvars.iv67 (INDUCTION)
+		%indvars.iv64 (INDUCTION)
+		%indvars.iv61 (INDUCTION)
+		%indvars.iv33 (INDUCTION)
+		2 (CONSTANT)
+
+	Basic Block: %.lr.ph	Number of accesses: 3	Segment stride: 1
+	  %76 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %position, i64 %indvars.iv55, i64 %indvars.iv46, i64 %indvars.iv37, i64 %indvars.iv, i32 0, !dbg !111
+		%indvars.iv55 (INDUCTION)
+		%indvars.iv46 (INDUCTION)
+		%indvars.iv37 (INDUCTION)
+		%indvars.iv (INDUCTION)
+		0 (CONSTANT)
+
+	  %78 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %position, i64 %indvars.iv55, i64 %indvars.iv46, i64 %indvars.iv37, i64 %indvars.iv, i32 1, !dbg !111
+		%indvars.iv55 (INDUCTION)
+		%indvars.iv46 (INDUCTION)
+		%indvars.iv37 (INDUCTION)
+		%indvars.iv (INDUCTION)
+		1 (CONSTANT)
+
+	  %80 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %position, i64 %indvars.iv55, i64 %indvars.iv46, i64 %indvars.iv37, i64 %indvars.iv, i32 2, !dbg !111
+		%indvars.iv55 (INDUCTION)
+		%indvars.iv46 (INDUCTION)
+		%indvars.iv37 (INDUCTION)
+		%indvars.iv (INDUCTION)
+		2 (CONSTANT)
+
+
+	Variable: force	Type: [4 x [4 x [10 x %struct.dvector_t]]]	Stride: 1
+	Accesses:
+	Basic Block: %63	Number of accesses: 3	Segment stride: 1
+	  %70 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %force, i64 %indvars.iv67, i64 %indvars.iv64, i64 %indvars.iv61, i64 %indvars.iv33, i32 0, !dbg !103
+		%indvars.iv67 (INDUCTION)
+		%indvars.iv64 (INDUCTION)
+		%indvars.iv61 (INDUCTION)
+		%indvars.iv33 (INDUCTION)
+		0 (CONSTANT)
+
+	  %72 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %force, i64 %indvars.iv67, i64 %indvars.iv64, i64 %indvars.iv61, i64 %indvars.iv33, i32 1, !dbg !107
+		%indvars.iv67 (INDUCTION)
+		%indvars.iv64 (INDUCTION)
+		%indvars.iv61 (INDUCTION)
+		%indvars.iv33 (INDUCTION)
+		1 (CONSTANT)
+
+	  %74 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]]* %force, i64 %indvars.iv67, i64 %indvars.iv64, i64 %indvars.iv61, i64 %indvars.iv33, i32 2, !dbg !109
+		%indvars.iv67 (INDUCTION)
+		%indvars.iv64 (INDUCTION)
+		%indvars.iv61 (INDUCTION)
+		%indvars.iv33 (INDUCTION)
+		2 (CONSTANT)
+
+
+
+

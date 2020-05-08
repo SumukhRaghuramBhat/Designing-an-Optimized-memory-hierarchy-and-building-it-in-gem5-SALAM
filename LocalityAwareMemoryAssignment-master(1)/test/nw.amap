@@ -1,0 +1,115 @@
+nw.amap
+
+Function: needwun
+Params:
+i8* nocapture readonly %SEQA, i8* nocapture readonly %SEQB, i8* nocapture %alignedA, i8* nocapture %alignedB, i32* nocapture %M, i8* nocapture %ptr
+
+	Variable: M	Type: i32	Stride: VARIABLE
+	Accesses:
+	Basic Block: %1	Number of accesses: 1	Segment stride: 1
+	  %3 = getelementptr inbounds i32, i32* %M, i32 %a_idx.029
+		%a_idx.029 (INDUCTION)
+
+	Basic Block: %.preheader5	Number of accesses: 1	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %7 = getelementptr inbounds i32, i32* %M, i32 %6
+		%6 (REGISTER)
+
+	Basic Block: %13	Number of accesses: 4	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %20 = getelementptr inbounds i32, i32* %M, i32 %19
+		%19 (REGISTER)
+
+	  %24 = getelementptr inbounds i32, i32* %M, i32 %23
+		%23 (NESTED_INDUCTION)
+
+	  %28 = getelementptr inbounds i32, i32* %M, i32 %27
+		%27 (REGISTER)
+
+	  %36 = getelementptr inbounds i32, i32* %M, i32 %35
+		%35 (NESTED_INDUCTION)
+
+
+	Variable: SEQB	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %.preheader3	Number of accesses: 1	Segment stride: 1
+	  %10 = getelementptr inbounds i8, i8* %SEQB, i32 %9
+		%9 (NESTED_INDUCTION)
+
+	Basic Block: %55	Number of accesses: 1	Segment stride: 1
+	  %61 = getelementptr inbounds i8, i8* %SEQB, i32 %60
+		%60 (NESTED_INDUCTION)
+
+	Basic Block: %74	Number of accesses: 1	Segment stride: 1
+	  %78 = getelementptr inbounds i8, i8* %SEQB, i32 %77
+		%77 (NESTED_INDUCTION)
+
+
+	Variable: SEQA	Type: i8	Stride: VARIABLE
+	Accesses:
+	Basic Block: %13	Number of accesses: 1	Segment stride: 1
+	  %15 = getelementptr inbounds i8, i8* %SEQA, i32 %14
+		%14 (NESTED_INDUCTION)
+
+	Basic Block: %55	Number of accesses: 1	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %57 = getelementptr inbounds i8, i8* %SEQA, i32 %56
+		%56 (REGISTER)
+
+	Basic Block: %68	Number of accesses: 1	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %70 = getelementptr inbounds i8, i8* %SEQA, i32 %69
+		%69 (REGISTER)
+
+
+	Variable: ptr	Type: i8	Stride: VARIABLE
+	Accesses:
+	Basic Block: %38	Number of accesses: 1	Segment stride: 1
+	  %39 = getelementptr inbounds i8, i8* %ptr, i32 %35
+		%35 (NESTED_INDUCTION)
+
+	Basic Block: %40	Number of accesses: 1	Segment stride: 1
+	  %42 = getelementptr inbounds i8, i8* %ptr, i32 %35
+		%35 (NESTED_INDUCTION)
+
+	Basic Block: %50	Number of accesses: 1	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %53 = getelementptr inbounds i8, i8* %ptr, i32 %52
+		%52 (REGISTER)
+
+
+	Variable: alignedA	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %55	Number of accesses: 1	Segment stride: 1
+	  %59 = getelementptr inbounds i8, i8* %alignedA, i32 %a_str_idx.016
+		%a_str_idx.016 (INDUCTION)
+
+	Basic Block: %68	Number of accesses: 1	Segment stride: 1
+	  %72 = getelementptr inbounds i8, i8* %alignedA, i32 %a_str_idx.016
+		%a_str_idx.016 (INDUCTION)
+
+	Basic Block: %74	Number of accesses: 1	Segment stride: 1
+	  %76 = getelementptr inbounds i8, i8* %alignedA, i32 %a_str_idx.016
+		%a_str_idx.016 (INDUCTION)
+
+	Basic Block: %.lr.ph14	Number of accesses: 1	Segment stride: 1
+	  %85 = getelementptr inbounds i8, i8* %alignedA, i32 %a_str_idx.113
+		%a_str_idx.113 (INDUCTION)
+
+
+	Variable: alignedB	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %55	Number of accesses: 1	Segment stride: 1
+	  %63 = getelementptr inbounds i8, i8* %alignedB, i32 %b_str_idx.017
+		%b_str_idx.017 (INDUCTION)
+
+	Basic Block: %68	Number of accesses: 1	Segment stride: 1
+	  %73 = getelementptr inbounds i8, i8* %alignedB, i32 %b_str_idx.017
+		%b_str_idx.017 (INDUCTION)
+
+	Basic Block: %74	Number of accesses: 1	Segment stride: 1
+	  %81 = getelementptr inbounds i8, i8* %alignedB, i32 %b_str_idx.017
+		%b_str_idx.017 (INDUCTION)
+
+	Basic Block: %.lr.ph	Number of accesses: 1	Segment stride: 1
+	  %87 = getelementptr inbounds i8, i8* %alignedB, i32 %b_str_idx.112
+		%b_str_idx.112 (INDUCTION)
+
+
+
+

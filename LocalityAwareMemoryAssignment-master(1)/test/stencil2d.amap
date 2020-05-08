@@ -1,0 +1,29 @@
+stencil2d.amap
+
+Function: stencil
+Params:
+i32* nocapture readonly %orig, i32* nocapture %sol, i32* nocapture readonly %filter
+
+	Variable: filter	Type: i32	Stride: 1
+	Accesses:
+	Basic Block: %6	Number of accesses: 1	Segment stride: 1
+	  %8 = getelementptr inbounds i32, i32* %filter, i32 %7
+		%7 (NESTED_INDUCTION)
+
+
+	Variable: orig	Type: i32	Stride: 1
+	Accesses:
+	Basic Block: %6	Number of accesses: 1	Segment stride: 1
+	  %11 = getelementptr inbounds i32, i32* %orig, i32 %10
+		%10 (NESTED_INDUCTION)
+
+
+	Variable: sol	Type: i32	Stride: 1
+	Accesses:
+	Basic Block: %18	Number of accesses: 1	Segment stride: 1
+	  %20 = getelementptr inbounds i32, i32* %sol, i32 %19
+		%19 (NESTED_INDUCTION)
+
+
+
+

@@ -1,0 +1,98 @@
+md-grid.amap
+
+Struct types:
+%struct.dvector_t = type { double, double, double }
+
+Function: md
+Params:
+[4 x [4 x i32]]* nocapture readonly %n_points, [4 x [4 x [10 x %struct.dvector_t]]]* nocapture %force, [4 x [4 x [10 x %struct.dvector_t]]]* nocapture readonly %position
+
+	Variable: n_points	Type: [4 x [4 x i32]]	Stride: 1
+	Accesses:
+	Basic Block: %.lr.ph26	Number of accesses: 1	Segment stride: 1
+	  %23 = getelementptr inbounds [4 x [4 x i32]], [4 x [4 x i32]]* %n_points, i32 %b0.sroa.0.031, i32 %b0.sroa.18.030, i32 %b0.sroa.34.028
+		%b0.sroa.0.031 (INDUCTION)
+		%b0.sroa.18.030 (INDUCTION)
+		%b0.sroa.34.028 (INDUCTION)
+
+	Basic Block: %.lr.ph16	Number of accesses: 1	Segment stride: 1
+	  %25 = getelementptr inbounds [4 x [4 x i32]], [4 x [4 x i32]]* %n_points, i32 %b1.sroa.0.023, i32 %b1.sroa.8.018, i32 %b1.sroa.14.013
+		%b1.sroa.0.023 (INDUCTION)
+		%b1.sroa.8.018 (INDUCTION)
+		%b1.sroa.14.013 (INDUCTION)
+
+
+	Variable: position	Type: [4 x [4 x [10 x %struct.dvector_t]]]	Stride: 1
+	Accesses:
+	Basic Block: %30	Number of accesses: 3	Segment stride: 1
+	  %31 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %position, i32 %b0.sroa.0.031, i32 %b0.sroa.18.030, i32 %b0.sroa.34.028, i32 %p_idx.09, i32 0
+		%b0.sroa.0.031 (INDUCTION)
+		%b0.sroa.18.030 (INDUCTION)
+		%b0.sroa.34.028 (INDUCTION)
+		%p_idx.09 (INDUCTION)
+		0 (CONSTANT)
+
+	  %33 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %position, i32 %b0.sroa.0.031, i32 %b0.sroa.18.030, i32 %b0.sroa.34.028, i32 %p_idx.09, i32 1
+		%b0.sroa.0.031 (INDUCTION)
+		%b0.sroa.18.030 (INDUCTION)
+		%b0.sroa.34.028 (INDUCTION)
+		%p_idx.09 (INDUCTION)
+		1 (CONSTANT)
+
+	  %35 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %position, i32 %b0.sroa.0.031, i32 %b0.sroa.18.030, i32 %b0.sroa.34.028, i32 %p_idx.09, i32 2
+		%b0.sroa.0.031 (INDUCTION)
+		%b0.sroa.18.030 (INDUCTION)
+		%b0.sroa.34.028 (INDUCTION)
+		%p_idx.09 (INDUCTION)
+		2 (CONSTANT)
+
+	Basic Block: %.lr.ph	Number of accesses: 3	Segment stride: 1
+	  %43 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %position, i32 %b1.sroa.0.023, i32 %b1.sroa.8.018, i32 %b1.sroa.14.013, i32 %q_idx.03, i32 0
+		%b1.sroa.0.023 (INDUCTION)
+		%b1.sroa.8.018 (INDUCTION)
+		%b1.sroa.14.013 (INDUCTION)
+		%q_idx.03 (INDUCTION)
+		0 (CONSTANT)
+
+	  %45 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %position, i32 %b1.sroa.0.023, i32 %b1.sroa.8.018, i32 %b1.sroa.14.013, i32 %q_idx.03, i32 1
+		%b1.sroa.0.023 (INDUCTION)
+		%b1.sroa.8.018 (INDUCTION)
+		%b1.sroa.14.013 (INDUCTION)
+		%q_idx.03 (INDUCTION)
+		1 (CONSTANT)
+
+	  %47 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %position, i32 %b1.sroa.0.023, i32 %b1.sroa.8.018, i32 %b1.sroa.14.013, i32 %q_idx.03, i32 2
+		%b1.sroa.0.023 (INDUCTION)
+		%b1.sroa.8.018 (INDUCTION)
+		%b1.sroa.14.013 (INDUCTION)
+		%q_idx.03 (INDUCTION)
+		2 (CONSTANT)
+
+
+	Variable: force	Type: [4 x [4 x [10 x %struct.dvector_t]]]	Stride: 1
+	Accesses:
+	Basic Block: %30	Number of accesses: 3	Segment stride: 1
+	  %37 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %force, i32 %b0.sroa.0.031, i32 %b0.sroa.18.030, i32 %b0.sroa.34.028, i32 %p_idx.09, i32 0
+		%b0.sroa.0.031 (INDUCTION)
+		%b0.sroa.18.030 (INDUCTION)
+		%b0.sroa.34.028 (INDUCTION)
+		%p_idx.09 (INDUCTION)
+		0 (CONSTANT)
+
+	  %39 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %force, i32 %b0.sroa.0.031, i32 %b0.sroa.18.030, i32 %b0.sroa.34.028, i32 %p_idx.09, i32 1
+		%b0.sroa.0.031 (INDUCTION)
+		%b0.sroa.18.030 (INDUCTION)
+		%b0.sroa.34.028 (INDUCTION)
+		%p_idx.09 (INDUCTION)
+		1 (CONSTANT)
+
+	  %41 = getelementptr inbounds [4 x [4 x [10 x %struct.dvector_t]]], [4 x [4 x [10 x %struct.dvector_t]]]* %force, i32 %b0.sroa.0.031, i32 %b0.sroa.18.030, i32 %b0.sroa.34.028, i32 %p_idx.09, i32 2
+		%b0.sroa.0.031 (INDUCTION)
+		%b0.sroa.18.030 (INDUCTION)
+		%b0.sroa.34.028 (INDUCTION)
+		%p_idx.09 (INDUCTION)
+		2 (CONSTANT)
+
+
+
+

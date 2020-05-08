@@ -1,0 +1,348 @@
+aes.amap
+
+Struct types:
+%struct.aes256_context = type { [32 x i8], [32 x i8], [32 x i8] }
+
+Global vars:
+sbox
+
+Function: rj_xtime
+Params:
+i8 zeroext %x
+
+
+
+Function: aes_subBytes
+Params:
+i8* nocapture %buf
+
+	Variable: buf	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %1	Number of accesses: 1	Segment stride: 1
+	  %2 = getelementptr inbounds i8* %buf, i64 %indvars.iv, !dbg !90
+		%indvars.iv (INDUCTION)
+
+
+	Variable: sbox	Type: [256 x i8]	Stride: VARIABLE
+	Accesses:
+	Basic Block: %1	Number of accesses: 1	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %5 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %4, !dbg !90
+		0 (CONSTANT)
+		%4 (REGISTER)
+
+
+
+
+Function: aes_addRoundKey
+Params:
+i8* nocapture %buf, i8* nocapture readonly %key
+
+	Variable: key	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %1	Number of accesses: 1	Segment stride: 1
+	  %2 = getelementptr inbounds i8* %key, i64 %indvars.iv, !dbg !97
+		%indvars.iv (INDUCTION)
+
+
+	Variable: buf	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %1	Number of accesses: 1	Segment stride: 1
+	  %4 = getelementptr inbounds i8* %buf, i64 %indvars.iv, !dbg !97
+		%indvars.iv (INDUCTION)
+
+
+
+
+Function: aes_addRoundKey_cpy
+Params:
+i8* nocapture %buf, i8* nocapture readonly %key, i8* nocapture %cpk
+
+	Variable: key	Type: i8	Stride: VARIABLE
+	Accesses:
+	Basic Block: %1	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %2 = getelementptr inbounds i8* %key, i64 %indvars.iv, !dbg !101
+		%indvars.iv (INDUCTION)
+
+	  %9 = getelementptr inbounds i8* %key, i64 %8, !dbg !101
+		%8 (NESTED_INDUCTION)
+
+
+	Variable: cpk	Type: i8	Stride: VARIABLE
+	Accesses:
+	Basic Block: %1	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %4 = getelementptr inbounds i8* %cpk, i64 %indvars.iv, !dbg !101
+		%indvars.iv (INDUCTION)
+
+	  %11 = getelementptr inbounds i8* %cpk, i64 %8, !dbg !101
+		%8 (NESTED_INDUCTION)
+
+
+	Variable: buf	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %1	Number of accesses: 1	Segment stride: 1
+	  %5 = getelementptr inbounds i8* %buf, i64 %indvars.iv, !dbg !101
+		%indvars.iv (INDUCTION)
+
+
+
+
+Function: aes_shiftRows
+Params:
+i8* nocapture %buf
+
+	Variable: buf	Type: i8	Stride: 5
+	Accesses:
+	Basic Block: %0	Number of accesses: 12	Segment stride: VARIABLE: IRREGULAR CONSTANTS: AVERAGE: 5
+	  %1 = getelementptr inbounds i8* %buf, i64 1, !dbg !104
+		1 (CONSTANT)
+
+	  %3 = getelementptr inbounds i8* %buf, i64 5, !dbg !104
+		5 (CONSTANT)
+
+	  %5 = getelementptr inbounds i8* %buf, i64 9, !dbg !104
+		9 (CONSTANT)
+
+	  %7 = getelementptr inbounds i8* %buf, i64 13, !dbg !104
+		13 (CONSTANT)
+
+	  %9 = getelementptr inbounds i8* %buf, i64 10, !dbg !105
+		10 (CONSTANT)
+
+	  %11 = getelementptr inbounds i8* %buf, i64 2, !dbg !105
+		2 (CONSTANT)
+
+	  %13 = getelementptr inbounds i8* %buf, i64 3, !dbg !106
+		3 (CONSTANT)
+
+	  %15 = getelementptr inbounds i8* %buf, i64 15, !dbg !106
+		15 (CONSTANT)
+
+	  %17 = getelementptr inbounds i8* %buf, i64 11, !dbg !106
+		11 (CONSTANT)
+
+	  %19 = getelementptr inbounds i8* %buf, i64 7, !dbg !106
+		7 (CONSTANT)
+
+	  %21 = getelementptr inbounds i8* %buf, i64 14, !dbg !107
+		14 (CONSTANT)
+
+	  %23 = getelementptr inbounds i8* %buf, i64 6, !dbg !107
+		6 (CONSTANT)
+
+
+
+
+Function: aes_mixColumns
+Params:
+i8* nocapture %buf
+
+	Variable: buf	Type: i8	Stride: VARIABLE
+	Accesses:
+	Basic Block: %1	Number of accesses: 4	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %2 = getelementptr inbounds i8* %buf, i64 %indvars.iv, !dbg !113
+		%indvars.iv (INDUCTION)
+
+	  %5 = getelementptr inbounds i8* %buf, i64 %4, !dbg !113
+		%4 (REGISTER)
+
+	  %8 = getelementptr inbounds i8* %buf, i64 %7, !dbg !113
+		%7 (REGISTER)
+
+	  %11 = getelementptr inbounds i8* %buf, i64 %10, !dbg !113
+		%10 (REGISTER)
+
+
+
+
+Function: aes_expandEncKey
+Params:
+i8* %k, i8 zeroext %rc
+
+	Variable: k	Type: i8	Stride: VARIABLE
+	Accesses:
+	Basic Block: %0	Number of accesses: 7	Segment stride: VARIABLE: IRREGULAR CONSTANTS: AVERAGE: 23
+	  %1 = getelementptr inbounds i8* %k, i64 29, !dbg !120
+		29 (CONSTANT)
+
+	  %9 = getelementptr inbounds i8* %k, i64 30, !dbg !121
+		30 (CONSTANT)
+
+	  %14 = getelementptr inbounds i8* %k, i64 1, !dbg !121
+		1 (CONSTANT)
+
+	  %17 = getelementptr inbounds i8* %k, i64 31, !dbg !122
+		31 (CONSTANT)
+
+	  %22 = getelementptr inbounds i8* %k, i64 2, !dbg !122
+		2 (CONSTANT)
+
+	  %25 = getelementptr inbounds i8* %k, i64 28, !dbg !123
+		28 (CONSTANT)
+
+	  %30 = getelementptr inbounds i8* %k, i64 3, !dbg !123
+		3 (CONSTANT)
+
+	Basic Block: %35	Number of accesses: 8	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %39 = getelementptr inbounds i8* %k, i64 %38, !dbg !126
+		%38 (REGISTER)
+
+	  %41 = getelementptr inbounds i8* %k, i64 %indvars.iv5, !dbg !126
+		%indvars.iv5 (INDUCTION)
+
+	  %46 = getelementptr inbounds i8* %k, i64 %45, !dbg !126
+		%45 (REGISTER)
+
+	  %49 = getelementptr inbounds i8* %k, i64 %48, !dbg !126
+		%48 (REGISTER)
+
+	  %54 = getelementptr inbounds i8* %k, i64 %53, !dbg !126
+		%53 (REGISTER)
+
+	  %57 = getelementptr inbounds i8* %k, i64 %56, !dbg !126
+		%56 (REGISTER)
+
+	  %62 = getelementptr inbounds i8* %k, i64 %61, !dbg !126
+		%61 (REGISTER)
+
+	  %65 = getelementptr inbounds i8* %k, i64 %64, !dbg !126
+		%64 (REGISTER)
+
+	Basic Block: %71	Number of accesses: 8	Segment stride: VARIABLE: IRREGULAR CONSTANTS: AVERAGE: 3
+	  %74 = getelementptr inbounds i8* %k, i64 12, !dbg !128
+		12 (CONSTANT)
+
+	  %79 = getelementptr inbounds i8* %k, i64 16, !dbg !128
+		16 (CONSTANT)
+
+	  %82 = getelementptr inbounds i8* %k, i64 13, !dbg !129
+		13 (CONSTANT)
+
+	  %87 = getelementptr inbounds i8* %k, i64 17, !dbg !129
+		17 (CONSTANT)
+
+	  %90 = getelementptr inbounds i8* %k, i64 14, !dbg !130
+		14 (CONSTANT)
+
+	  %95 = getelementptr inbounds i8* %k, i64 18, !dbg !130
+		18 (CONSTANT)
+
+	  %98 = getelementptr inbounds i8* %k, i64 15, !dbg !131
+		15 (CONSTANT)
+
+	  %103 = getelementptr inbounds i8* %k, i64 19, !dbg !131
+		19 (CONSTANT)
+
+	Basic Block: %106	Number of accesses: 8	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %110 = getelementptr inbounds i8* %k, i64 %109, !dbg !133
+		%109 (REGISTER)
+
+	  %112 = getelementptr inbounds i8* %k, i64 %indvars.iv3, !dbg !133
+		%indvars.iv3 (INDUCTION)
+
+	  %117 = getelementptr inbounds i8* %k, i64 %116, !dbg !133
+		%116 (REGISTER)
+
+	  %120 = getelementptr inbounds i8* %k, i64 %119, !dbg !133
+		%119 (REGISTER)
+
+	  %125 = getelementptr inbounds i8* %k, i64 %124, !dbg !133
+		%124 (REGISTER)
+
+	  %128 = getelementptr inbounds i8* %k, i64 %127, !dbg !133
+		%127 (REGISTER)
+
+	  %133 = getelementptr inbounds i8* %k, i64 %132, !dbg !133
+		%132 (REGISTER)
+
+	  %136 = getelementptr inbounds i8* %k, i64 %135, !dbg !133
+		%135 (REGISTER)
+
+
+	Variable: sbox	Type: [256 x i8]	Stride: VARIABLE
+	Accesses:
+	Basic Block: %0	Number of accesses: 4	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %4 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %3, !dbg !120
+		0 (CONSTANT)
+		%3 (REGISTER)
+
+	  %12 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %11, !dbg !121
+		0 (CONSTANT)
+		%11 (REGISTER)
+
+	  %20 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %19, !dbg !122
+		0 (CONSTANT)
+		%19 (REGISTER)
+
+	  %28 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %27, !dbg !123
+		0 (CONSTANT)
+		%27 (REGISTER)
+
+	Basic Block: %71	Number of accesses: 4	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %77 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %76, !dbg !128
+		0 (CONSTANT)
+		%76 (REGISTER)
+
+	  %85 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %84, !dbg !129
+		0 (CONSTANT)
+		%84 (REGISTER)
+
+	  %93 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %92, !dbg !130
+		0 (CONSTANT)
+		%92 (REGISTER)
+
+	  %101 = getelementptr inbounds [256 x i8]* @sbox, i64 0, i64 %100, !dbg !131
+		0 (CONSTANT)
+		%100 (REGISTER)
+
+
+
+
+Function: aes256_encrypt_ecb
+Params:
+%struct.aes256_context* %ctx, i8* %k, i8* %buf
+
+	Variable: ctx	Type: %struct.aes256_context	Stride: VARIABLE
+	Accesses:
+	Basic Block: %.preheader	Number of accesses: 1	Segment stride: VECTOR WIDTH
+	  %3 = getelementptr inbounds %struct.aes256_context* %ctx, i64 0, i32 2, i64 0, !dbg !146
+		0 (CONSTANT)
+		2 (CONSTANT)
+		0 (CONSTANT)
+
+	Basic Block: %4	Number of accesses: 2	Segment stride: VARIABLE: MULTIPLE CONTROLLING INDVARS
+	  %7 = getelementptr inbounds %struct.aes256_context* %ctx, i64 0, i32 2, i64 %indvars.iv, !dbg !148
+		0 (CONSTANT)
+		2 (CONSTANT)
+		%indvars.iv (INDUCTION)
+
+	  %8 = getelementptr inbounds %struct.aes256_context* %ctx, i64 0, i32 1, i64 %indvars.iv, !dbg !148
+		0 (CONSTANT)
+		1 (CONSTANT)
+		%indvars.iv (INDUCTION)
+
+	Basic Block: %12	Number of accesses: 3	Segment stride: VARIABLE: OPERATION DEPENDENCY
+	  %13 = getelementptr inbounds %struct.aes256_context* %ctx, i64 0, i32 1, i64 0, !dbg !151
+		0 (CONSTANT)
+		1 (CONSTANT)
+		0 (CONSTANT)
+
+	  %14 = getelementptr inbounds %struct.aes256_context* %ctx, i64 0, i32 0, i64 0, !dbg !151
+		0 (CONSTANT)
+		0 (CONSTANT)
+		0 (CONSTANT)
+
+	  %15 = getelementptr inbounds %struct.aes256_context* %ctx, i64 0, i32 0, i64 16, !dbg !157
+		0 (CONSTANT)
+		0 (CONSTANT)
+		16 (CONSTANT)
+
+
+	Variable: k	Type: i8	Stride: 1
+	Accesses:
+	Basic Block: %4	Number of accesses: 1	Segment stride: 1
+	  %5 = getelementptr inbounds i8* %k, i64 %indvars.iv, !dbg !148
+		%indvars.iv (INDUCTION)
+
+
+
+

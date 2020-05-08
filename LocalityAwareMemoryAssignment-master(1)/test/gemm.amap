@@ -1,0 +1,29 @@
+gemm.amap
+
+Function: gemm
+Params:
+double* nocapture readonly %m1, double* nocapture readonly %m2, double* nocapture %prod
+
+	Variable: m1	Type: double	Stride: 1
+	Accesses:
+	Basic Block: %3	Number of accesses: 1	Segment stride: 1
+	  %6 = getelementptr inbounds double, double* %m1, i64 %5
+		%5 (NESTED_INDUCTION)
+
+
+	Variable: m2	Type: double	Stride: 1
+	Accesses:
+	Basic Block: %3	Number of accesses: 1	Segment stride: 1
+	  %9 = getelementptr inbounds double, double* %m2, i64 %8
+		%8 (NESTED_INDUCTION)
+
+
+	Variable: prod	Type: double	Stride: 1
+	Accesses:
+	Basic Block: %13	Number of accesses: 1	Segment stride: 1
+	  %15 = getelementptr inbounds double, double* %prod, i64 %14
+		%14 (NESTED_INDUCTION)
+
+
+
+
