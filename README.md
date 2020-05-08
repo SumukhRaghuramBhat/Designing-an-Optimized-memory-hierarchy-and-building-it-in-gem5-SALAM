@@ -60,7 +60,7 @@ The benchmarks/common folder contains basic drivers and syscalls for baremetal s
 
 Baremetal examples can be running using:
 > baremetalarm.sh [benchmark] 
-Similarly use systemValidation.sh
+> systemValidation.sh
 
 # Results and Analysis: 
 Analyzing three of the MachSuite benchmarks: MD-KNN, BFS and  SPMV
