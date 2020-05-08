@@ -62,6 +62,4 @@ Baremetal examples can be running using:
 > baremetalarm.sh [benchmark] 
 > systemValidation.sh
 
-# Results and Analysis: 
-Analyzing three of the MachSuite benchmarks: MD-KNN, BFS and  SPMV
 
